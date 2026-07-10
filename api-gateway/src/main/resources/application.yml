@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: api-gateway
+              uri: http://api-gateway
+              predicates:
+                - Path=/api/**
+
+server:
+  port: 8080
